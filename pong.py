@@ -1,6 +1,7 @@
 import pygame as pg
 import time
 
+# Display Width and Display Height
 dw = 800
 dh = 600
 
@@ -15,6 +16,7 @@ scores = pg.mixer.Sound("score.wav")
 white = (255,255,255)
 black = (0,0,0)
 
+# Paddle Height and Paddle Width
 ph = 60
 pw = 10
 
@@ -27,6 +29,7 @@ def paddle1(x,y):
 def paddle2(x,y):
     pg.draw.rect(gameDisplay, white, (x,y,pw,ph))
 
+# Speed of the Paddles
 speed = s = 10
 
 xP1, yP1 = 10, dh/2
@@ -55,7 +58,6 @@ def displayText(text, color, x, y):
 while playing:
 
     if score:
-        displayText(str("Ready!"), white, dw//2, dh//2)
         time.sleep(1)
         score = False
 
@@ -75,7 +77,6 @@ while playing:
         yP1 += s * -1
     if keys[pg.K_s]:
         yP1 += s
-
 
     # This enables the computer to basically cheat and go to where the ball is. I used it to test my program
     #yP1 = yb-ph//2
